@@ -130,7 +130,7 @@ scripts/create-loop.sh /tmp/myfs.img 64
 В выводе будет устройство, например:
 
 ```text
-/dev/loop10
+/dev/loop23
 ```
 
 Проверить loop-устройства можно так:
@@ -146,7 +146,7 @@ losetup -a
 Через скрипт:
 
 ```bash
-scripts/load.sh /dev/loop10 0 128 32 4
+scripts/load.sh /dev/loop23 0 128 32 4
 ```
 
 Параметры модуля:
@@ -190,7 +190,7 @@ sudo dmesg | tail -100
 Через скрипт:
 
 ```bash
-scripts/mount.sh /dev/loop10 /mnt
+scripts/mount.sh /dev/loop23 /mnt
 ```
 
 При первом монтировании модуль:
@@ -210,9 +210,13 @@ ls -la /mnt | head
 Пример ожидаемого вывода:
 
 ```text
-file_000000
-file_000001
-file_000002
+итого 65538
+drwxr-xr-x  2 root root 32767 мая 24 14:22 .
+drwxr-xr-x 20 root root  4096 мая 24 13:55 ..
+-rw-r--r--  1 ilya ilya  2048 мая 24 14:23 file_000000
+-rw-r--r--  1 ilya ilya  2048 мая 24 14:23 file_000001
+-rw-r--r--  1 ilya ilya  2048 мая 24 14:23 file_000002
+-rw-r--r--  1 ilya ilya  2048 мая 24 14:23 file_000003
 ...
 ```
 
@@ -229,7 +233,7 @@ sudo userspace/myfsctl test /mnt
 Ожидаемый результат:
 
 ```text
-Checked files: <число файлов>
+Checked files: 32767
 OK
 ```
 

@@ -79,7 +79,7 @@ static struct dentry *myfs_mount(struct file_system_type *fs_type,
         return ERR_PTR(-EINVAL);
     }
 
-    return mount_bdev(fs_type, flags, dev_name, data, myfs_fill_super);
+    return (struct dentry *)mount_bdev(fs_type, flags, dev_name, data, myfs_fill_super);
 }
 
 static struct file_system_type myfs_fs_type = {
