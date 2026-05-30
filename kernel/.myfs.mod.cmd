@@ -1,1 +1,0 @@
-savedcmd_/home/ilya/repos/LinuxHomeWork/kernel/myfs.mod := printf '%s\n'   main.o super.o inode.o dir.o file.o ioctl.o | awk '!x[$$0]++ { print("/home/ilya/repos/LinuxHomeWork/kernel/"$$0) }' > /home/ilya/repos/LinuxHomeWork/kernel/myfs.mod
