@@ -1,1 +1,0 @@
-savedcmd_/home/ilya/repos/LinuxHomeWork/kernel/Module.symvers :=  scripts/mod/modpost -M -m       -o /home/ilya/repos/LinuxHomeWork/kernel/Module.symvers -T /home/ilya/repos/LinuxHomeWork/kernel/modules.order -i Module.symvers -e 
