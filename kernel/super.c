@@ -160,8 +160,7 @@ int myfs_load_or_format_super(struct super_block *sb, struct myfs_sb_info *sbi)
     }
 
     pr_info("myfs: no valid superblock found, formatting new filesystem\n");
-
-    return 0;
+    return 1;
 }
 
 static int myfs_zero_sector(struct super_block *sb, u64 sector)
