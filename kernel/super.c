@@ -160,12 +160,6 @@ int myfs_load_or_format_super(struct super_block *sb, struct myfs_sb_info *sbi)
     }
 
     pr_info("myfs: no valid superblock found, formatting new filesystem\n");
-    myfs_fill_new_disk_super(&chosen, total_sectors, file_count);
-    myfs_import_super(sbi, &chosen);
-
-    ret = myfs_write_super_copies(sb, sbi);
-    if (ret)
-        return ret;
 
     return 0;
 }
